@@ -5,9 +5,11 @@ import { getCurrencies } from '../redux/actions';
 
 class WalletForm extends Component {
   // chamar a função que esta nas actions para setar o currencies [ok]
-  state = {
-    currency: '',
-  };
+
+  /* state = {
+    currency: 'teste',
+  }; -> estava atualizando de acordo com o estado local que está com a string
+  vazia, precisa pegar do estado global como abaixo */
 
   componentDidMount() {
     // atualiza o estado
@@ -21,11 +23,12 @@ class WalletForm extends Component {
     this.setState({
       [name]: value,
     });
+    // muda as informações das moedas de acordo com o value
   };
 
   render() {
     const { currencies } = this.props;
-    const { currency } = this.state;
+    // const { currency } = this.state -> não precisa de um estado local;
     // aqui utilizar o currencies do props do estado global
     return (
       <form>
@@ -45,14 +48,16 @@ class WalletForm extends Component {
           data-testid="currency-input"
           onChange={ this.handleCurrencies }
           type="text"
-          value={ currency }
-          name="curency"
+          value={ currencies }
+          name="currencies"
         >
           {
             currencies.map((coin) => (
-              <option key={ coin } value={ coin.value }>
-                {coin.value}
+              <option key={ coin } value={ coin }>
+                {coin}
               </option>))
+          // esse map e para iterar sobre todas as moedas retornadas pelo estado
+          // global e utilizar elas em cada option
           }
         </select>
         <label htmlFor="descrição">
@@ -96,7 +101,9 @@ WalletForm.propTypes = {
 };
 
 const mapStateToProps = (globalState) => ({
-  currencies: globalState.currencies,
+  currencies: globalState.wallet.currencies,
+  // acessando o array de currencies e pegando do estado global o walletReducer (que tem o alias de wallet) e depois acessar a chave
+  // currencies que me retorna a action.payload da action 'fetchWalletForm'
 });
 
 export default connect(mapStateToProps)(WalletForm);
