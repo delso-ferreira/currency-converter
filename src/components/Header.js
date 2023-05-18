@@ -12,7 +12,7 @@ class Header extends Component {
     return (
       <div>
         <h1 data-testid="email-field">{ email }</h1>
-        <p data-testid="total-field">{`Bufunfa ${totalValue}` }</p>
+        <p data-testid="total-field">{totalValue}</p>
         <p data-testid="header-currency-field">BRL</p>
       </div>
     );
