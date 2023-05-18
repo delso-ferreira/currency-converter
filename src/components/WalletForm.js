@@ -108,8 +108,8 @@ class WalletForm extends Component {
           name="method"
         >
           <option value="Dinheiro">Dinheiro</option>
-          <option value="Crédito">Cartão de crédito</option>
-          <option value="Débito">Cartão de débito</option>
+          <option value="Cartão de crédito">Cartão de crédito</option>
+          <option value="Cartão de débito">Cartão de débito</option>
         </select>
         <label htmlFor="categoria">
           Categoria
