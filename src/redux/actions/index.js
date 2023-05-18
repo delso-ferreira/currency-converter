@@ -27,10 +27,8 @@ const getCurrencies = () => async (dispatch) => {
 
 const addUserExpense = (datauser) => async (dispatch) => {
   const getFetch = await fetch('https://economia.awesomeapi.com.br/json/all');
-  const result = await getFetch.json();
+  const coins = await getFetch.json();
 
-  const getCoins = Object.keys(result);
-  const coins = getCoins.filter((element) => element !== 'USDT');
   dispatch(submitWalletForm(datauser, coins));
 };
 

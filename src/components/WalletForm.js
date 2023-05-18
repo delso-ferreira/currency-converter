@@ -15,10 +15,10 @@ class WalletForm extends Component {
 
   state = {
     value: '',
-    currency: '',
+    currency: 'USD',
     description: '',
-    method: '',
-    tag: '',
+    method: 'Dinheiro',
+    tag: 'Alimentação',
     id: 0,
   };
 
@@ -34,27 +34,19 @@ class WalletForm extends Component {
     this.setState({
       [name]: value,
     });
-    // muda as informações das moedas de acordo com o value
+    // muda as informações de acordo com o value
   };
 
   handleClick = () => {
-    const localState = {
-      value,
-      currency,
-      description,
-      method,
-      tag,
-      id,
-    };
     const { dispatch } = this.props;
-    dispatch(addUserExpense(localState));
+    dispatch(addUserExpense(this.state));
 
     this.setState((prevstate) => ({
-      value,
-      currency,
-      description,
-      method,
-      tag,
+      value: '',
+      currency: 'USD',
+      description: '',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
       id: prevstate.id + 1,
     }));
   };
