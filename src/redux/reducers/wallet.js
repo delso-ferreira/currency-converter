@@ -1,5 +1,5 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { WALLET_SUBMIT, WALLET_REQUEST } from '../actions/actionTypes';
+import { WALLET_SUBMIT, WALLET_REQUEST, DELETE_TABLE_DATA } from '../actions/actionTypes';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -14,6 +14,9 @@ const walletReducer = (state = INITIAL_STATE, action) => {
     return { ...state, currencies: action.payload };
   case WALLET_SUBMIT:
     return { ...state, expenses: [...state.expenses, action.payload] };
+  case DELETE_TABLE_DATA:
+    return { ...state,
+      expenses: state.expenses.filter((data) => data.id !== action.payload) };
   default:
     return state;
   }

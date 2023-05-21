@@ -1,5 +1,5 @@
 // Coloque aqui suas actions
-import { USER_SUBMIT, WALLET_REQUEST, WALLET_SUBMIT } from './actionTypes';
+import { DELETE_TABLE_DATA, USER_SUBMIT, WALLET_REQUEST, WALLET_SUBMIT } from './actionTypes';
 
 const submitUserForm = (userProfile) => ({
   type: USER_SUBMIT,
@@ -32,5 +32,10 @@ const addUserExpense = (datauser) => async (dispatch) => {
   dispatch(submitWalletForm(datauser, coins));
 };
 
+const deleteTabledata = (id) => ({
+  type: DELETE_TABLE_DATA,
+  payload: id,
+});
+
 export { submitUserForm, submitWalletForm, fetchWalletForm,
-  getCurrencies, addUserExpense };
+  getCurrencies, addUserExpense, deleteTabledata };
