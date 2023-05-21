@@ -1,5 +1,6 @@
 // Coloque aqui suas actions
-import { DELETE_TABLE_DATA, USER_SUBMIT, WALLET_REQUEST, WALLET_SUBMIT } from './actionTypes';
+import { DELETE_TABLE_DATA, USER_SUBMIT, WALLET_REQUEST,
+  WALLET_SUBMIT } from './actionTypes';
 
 const submitUserForm = (userProfile) => ({
   type: USER_SUBMIT,
