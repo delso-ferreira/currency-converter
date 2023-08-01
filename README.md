@@ -1,6 +1,7 @@
 <h1>Currency Converter 💲💱</h1> 
 
-file:///home/delso/V%C3%ADdeos/Grava%C3%A7%C3%B5es%20de%20tela/video_currency_converter.webm
+
+[video_currency_converter.webm](https://github.com/delso-ferreira/currency-converter/assets/102612163/934932f6-dbce-46a9-848b-3b0d745704cf)
 
 
 <h2>Descrição</h2>
