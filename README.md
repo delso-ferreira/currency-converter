@@ -20,7 +20,7 @@ O desenvolvimento do Currency Converter segue a metodologia de Test-Driven Devel
 1 - Clone este repositório em sua máquina local:
 
 ```
-git clone https://github.com/seu_usuario/currency-converter.git
+git clone https://github.com/delso-ferreira/currency-converter.git
 ```
 
 2 - Acesse o diretório do projeto:
