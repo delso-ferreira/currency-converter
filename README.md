@@ -6,10 +6,10 @@ O Currency Converter é um projeto de <strong>conversor de moedas</strong> desen
 
 <h2>Funcionalidades</h2>
 
-✅ Conversão de várias moedas para o real (BRL)<br>
-✅ Adição de despesas com valores em diferentes moedas<br>
-✅ Exclusão de despesas<br>
-✅ Cálculo automático do valor total das despesas em reais<br>
+* Conversão de várias moedas para o real (BRL)<br>
+* Adição de despesas com valores em diferentes moedas<br>
+* Exclusão de despesas<br>
+* Cálculo automático do valor total das despesas em reais<br>
 
 <h2>Testes</h2>
 
