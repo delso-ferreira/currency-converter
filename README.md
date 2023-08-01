@@ -1,5 +1,7 @@
 <h1>Currency Converter 💲💱</h1> 
 
+<iframe width="560" height="315" src="https://youtu.be/Bf-xKT6hK8c" frameborder="0" allowfullscreen></iframe>
+
 <h2>Descrição</h2>
 
 O Currency Converter é um projeto de <strong>conversor de moedas</strong> desenvolvido com foco em Test-Driven Development (TDD) utilizando as tecnologias React e JavaScript. Ele permite converter várias moedas para o real brasileiro e oferece funcionalidades para adicionar e excluir despesas, calculando automaticamente o valor total em reais.
