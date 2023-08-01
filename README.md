@@ -1,4 +1,4 @@
-<h1>Currency Converter - Conversor de Moedas para o Real Brasileiro</h1> 💲💱
+<h1>Currency Converter Conversor de Moedas para o Real</h1> 💲💱
 
 <h2>Descrição</h2>
 
