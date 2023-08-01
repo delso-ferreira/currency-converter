@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { submitUserForm } from '../redux/actions';
+import '../styles/login.css';
 
 class Login extends React.Component {
   state = {
@@ -17,7 +18,6 @@ class Login extends React.Component {
     const minLength = password.length >= minEmail;
 
     const confirm = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    // https://stackoverflow.com/questions/39356826/how-to-check-if-it-a-text-input-has-a-valid-email-format-in-reactjs
     if (confirm.test(email)) {
       this.setState({
         btnDisabled: !(confirm.test(email) && minLength),
@@ -47,15 +47,17 @@ class Login extends React.Component {
 
     const { btnDisabled } = this.state;
     return (
-      <form>
+      <form className="login__container">
         <label htmlFor="email">
           Email
         </label>
         <input
+          className="login__email-input"
           type="email"
           id="email"
           name="email"
           data-testid="email-input"
+          maxLength="35"
           value={ email }
           onChange={ this.handleInputChange }
         />
@@ -63,15 +65,18 @@ class Login extends React.Component {
           Password
         </label>
         <input
+          className="login__password-input"
           type="password"
           id="password"
           name="password"
           data-testid="password-input"
+          maxLength="6"
           value={ password }
           onChange={ this.handleInputChange }
         />
         <button
-          type="button"
+          className="login__button"
+          type="submit"
           name="btnDisabled"
           disabled={ btnDisabled }
           onClick={ this.handleSubmit }

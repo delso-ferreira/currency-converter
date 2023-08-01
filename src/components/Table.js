@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteTabledata } from '../redux/actions';
-/* import { addUserExpense } from '../redux/actions'; */
+import '../styles/table.css';
 
 class Table extends Component {
   handleClick = (id) => {
@@ -13,48 +13,48 @@ class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <div>
-        <header>
-          <tr>
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
-            <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
-          </tr>
-        </header>
-        <tbody>
-          {expenses.map((data) => (
-            <tr key={ data.id }>
-              <td>{data.description}</td>
-              <td>{data.tag}</td>
-              <td>{data.method}</td>
-              <td>{Number(data.value).toFixed(2)}</td>
-              <td>{data.exchangeRates[data.currency].name}</td>
-              <td>{Number(data.exchangeRates[data.currency].ask).toFixed(2)}</td>
-              <td>
-                {(Number(data.value) * Number(data.exchangeRates[data.currency].ask))
-                  .toFixed(2)}
-
-              </td>
-              <td>Real</td>
-              <td>
-                Editar
-                <button
-                  type="button"
-                  data-testid="delete-btn"
-                  onClick={ () => this.handleClick(data.id) }
-                >
-                  Excluir
-                </button>
-              </td>
+      <div className="table__container">
+        <table className="wallet__table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Tag</th>
+              <th>Método de pagamento</th>
+              <th>Valor</th>
+              <th>Moeda</th>
+              <th>Câmbio utilizado</th>
+              <th>Valor convertido</th>
+              <th>Moeda de conversão</th>
+              <th>Excluir</th>
             </tr>
-          ))}
-        </tbody>
+          </thead>
+          <tbody>
+            {expenses.map((data) => (
+              <tr key={ data.id }>
+                <td>{data.description}</td>
+                <td>{data.tag}</td>
+                <td>{data.method}</td>
+                <td>{Number(data.value).toFixed(2)}</td>
+                <td>{data.exchangeRates[data.currency].name}</td>
+                <td>{Number(data.exchangeRates[data.currency].ask).toFixed(2)}</td>
+                <td>
+                  {(Number(data.value) * Number(data.exchangeRates[data.currency].ask))
+                    .toFixed(2)}
+                </td>
+                <td>Real</td>
+                <td>
+                  <button
+                    type="button"
+                    data-testid="delete-btn"
+                    onClick={ () => this.handleClick(data.id) }
+                  >
+                    Excluir
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     );
   }

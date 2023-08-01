@@ -2,17 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getCurrencies, addUserExpense } from '../redux/actions';
+import '../styles/walletform.css';
 
 class WalletForm extends Component {
-  // chamar a função que esta nas actions para setar o currencies [ok]
-
-  /* state = {
-    currency: 'teste',
-  }; -> estava atualizando de acordo com o estado local que está com a string
-  vazia, precisa pegar do estado global como abaixo */
-
-  // o estadeo local precisa existir para os inputs que o usuário coloca nessa tela para depois ir ao global
-
   state = {
     value: '',
     currency: 'USD',
@@ -23,9 +15,6 @@ class WalletForm extends Component {
   };
 
   componentDidMount() {
-    // atualiza o estado
-    // utilizar o dispatch e chamar a função getCurrencies
-    // fazer o mapstatetoprops pra pegar o state global
     const { dispatch } = this.props;
     dispatch(getCurrencies());
   }
@@ -34,7 +23,6 @@ class WalletForm extends Component {
     this.setState({
       [name]: value,
     });
-    // muda as informações de acordo com o value
   };
 
   handleClick = () => {
@@ -53,14 +41,10 @@ class WalletForm extends Component {
 
   render() {
     const { currencies } = this.props;
-    // const { currency } = this.state -> não precisa de um estado local;
-    // aqui utilizar o currencies do props do estado global
     const { value, currency, description, method, tag } = this.state;
     return (
-      <form>
-        <label htmlFor="valor">
-          Valor
-        </label>
+      <form className="wallet-form__container">
+        <label htmlFor="valor">Valor</label>
         <input
           type="text"
           name="value"
@@ -68,9 +52,7 @@ class WalletForm extends Component {
           value={ value }
           data-testid="value-input"
         />
-        <label htmlFor="moeda">
-          Moeda
-        </label>
+        <label htmlFor="moeda">Moeda</label>
         <select
           data-testid="currency-input"
           onChange={ this.handleCurrencies }
@@ -78,18 +60,13 @@ class WalletForm extends Component {
           value={ currency }
           name="currency"
         >
-          {
-            currencies.map((coin) => (
-              <option key={ coin } value={ coin }>
-                {coin}
-              </option>))
-          // esse map e para iterar sobre todas as moedas retornadas pelo estado
-          // global e utilizar elas em cada option
-          }
+          {currencies.map((coin) => (
+            <option key={ coin } value={ coin }>
+              {coin}
+            </option>
+          ))}
         </select>
-        <label htmlFor="descrição">
-          Descrição
-        </label>
+        <label htmlFor="descrição">Descrição</label>
         <input
           type="text"
           name="description"
@@ -97,9 +74,7 @@ class WalletForm extends Component {
           value={ description }
           data-testid="description-input"
         />
-        <label htmlFor="moeda">
-          Método de Pagamento
-        </label>
+        <label htmlFor="moeda">Método de Pagamento</label>
         <select
           data-testid="method-input"
           type="text"
@@ -111,9 +86,7 @@ class WalletForm extends Component {
           <option value="Cartão de crédito">Cartão de crédito</option>
           <option value="Cartão de débito">Cartão de débito</option>
         </select>
-        <label htmlFor="categoria">
-          Categoria
-        </label>
+        <label htmlFor="categoria">Categoria</label>
         <select
           data-testid="tag-input"
           type="text"
@@ -127,10 +100,7 @@ class WalletForm extends Component {
           <option value="Transporte">Transporte</option>
           <option value="Saúde">Saúde</option>
         </select>
-        <button
-          onClick={ this.handleClick }
-          type="button"
-        >
+        <button onClick={ this.handleClick } type="button">
           Adicionar Despesa
         </button>
       </form>
@@ -145,8 +115,6 @@ WalletForm.propTypes = {
 
 const mapStateToProps = (globalState) => ({
   currencies: globalState.wallet.currencies,
-  // acessando o array de currencies e pegando do estado global o walletReducer (que tem o alias de wallet) e depois acessar a chave
-  // currencies que me retorna a action.payload da action 'fetchWalletForm'
 });
 
 export default connect(mapStateToProps)(WalletForm);
