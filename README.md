@@ -1,6 +1,6 @@
 <h1>Currency Converter 💲💱</h1> 
 
-<iframe width="560" height="315" src="https://youtu.be/Bf-xKT6hK8c" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Bf-xKT6hK8c&ab_channel=Fer" frameborder="0" allowfullscreen></iframe>
 
 <h2>Descrição</h2>
 
