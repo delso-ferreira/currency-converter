@@ -1,7 +1,7 @@
 <h1>Currency Converter 💲💱</h1> 
 
 
-[video_currency_converter.webm](https://github.com/delso-ferreira/currency-converter/assets/102612163/934932f6-dbce-46a9-848b-3b0d745704cf)
+(https://github.com/delso-ferreira/currency-converter/assets/102612163/934932f6-dbce-46a9-848b-3b0d745704cf)
 
 
 <h2>Descrição</h2>
