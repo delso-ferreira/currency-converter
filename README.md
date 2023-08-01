@@ -6,10 +6,10 @@ O Currency Converter é um projeto de <strong>conversor de moedas</strong> desen
 
 <h2>Funcionalidades</h2>
 
-- Conversão de várias moedas para o real (BRL)
-- Adição de despesas com valores em diferentes moedas
-- Exclusão de despesas
-- Cálculo automático do valor total das despesas em reais
+✔️ Conversão de várias moedas para o real (BRL)<br>
+✔️ Adição de despesas com valores em diferentes moedas<br>
+✔️ Exclusão de despesas<br>
+✔️ Cálculo automático do valor total das despesas em reais<br>
 
 <h2>Testes</h2>
 
@@ -50,11 +50,11 @@ npm start
 
 Contribuições são bem-vindas! Se você quiser melhorar este projeto, siga as etapas abaixo:
 
-1. Fork o repositório.
-2. Crie um branch para sua funcionalidade ou correção.
-3. Faça suas alterações.
-4. Execute os testes
-5. Envie um pull request para revisão.
+1. Fork o repositório.<br>
+2. Crie um branch para sua funcionalidade ou correção.<br>
+3. Faça suas alterações.<br>
+4. Execute os testes<br>
+5. Envie um pull request para revisão.<br>
 
 <h2>Contato</h2>
 
