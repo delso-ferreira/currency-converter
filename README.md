@@ -1,5 +1,7 @@
 <h1>Currency Converter 💲💱</h1> 
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/delso-ferreira/currency-converter/blob/main/LICENSE)
+
 [Demo Currency Converter.webm](https://github.com/delso-ferreira/currency-converter/assets/102612163/c92bbcc9-965c-4a9f-9ace-6beccc1a2a1b)
 
 
